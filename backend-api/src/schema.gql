@@ -1,0 +1,52 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Vehicle {
+  id: Int!
+  licencePlateNumber: String!
+  brand: String!
+  model: String!
+  engineNumber: String!
+  vinNumber: String!
+  mfgDate: String!
+  createdAt: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Query {
+  getVehicle(id: Int!): Vehicle!
+  vehicles: [Vehicle!]!
+}
+
+type Mutation {
+  createVehicle(createVehicleInput: CreateVehicleInput!): Vehicle!
+  updateVehicle(updateVehicleInput: UpdateVehicleInput!, id: Float!): Vehicle!
+  deleteVehicle(id: Float!): Vehicle!
+  csvFile(file: Upload!): Int!
+}
+
+input CreateVehicleInput {
+  licencePlateNumber: String!
+  brand: String!
+  model: String!
+  engineNumber: String!
+  vinNumber: String!
+  mfgDate: String!
+}
+
+input UpdateVehicleInput {
+  licencePlateNumber: String
+  brand: String
+  model: String
+  engineNumber: String
+  vinNumber: String
+  mfgDate: String
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
